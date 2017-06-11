@@ -16,6 +16,14 @@
 
 	var dataset = [132, 71, 337, 93, 78, 43, 20, 16, 30, 8,  17, 21];
 
+		var x = d3.scaleLinear()
+			  .domain([0, 337])
+			  .range([0, w]);
+
+	var y = d3.scaleLinear()
+		      .domain([0, dataset.length])
+		      .range([0, h]);
+
 		var svg = d3.select("body")
 					.append("svg")
 					.attr("id", "chart")
@@ -27,9 +35,9 @@
 		   .enter()
 		   .append("rect")
 		   .attr("x", 0)
-		   .attr("y", function(d, i){ return i * 20;})
-		   .attr("width", function(d){ return d;})
-		   .attr("height", 19)
+		   .attr("y", function(d, i){ return y(i);})
+		   .attr("width", function(d){ return x(d);})
+		   .attr("height", function(d, i){ return y(1) - 1})
 		   .attr("fill", "teal");
 
 
