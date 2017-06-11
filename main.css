@@ -10,3 +10,14 @@ body,html{
 	background-color: #f5f2eb;
 	border: 1px solid #CCC;
 }
+
+.bar{
+	shape-rendering: crispEdges;	
+}
+
+.bar-label{
+	font-size: 24px;
+	text-anchor: end;
+	fill:white;
+
+}
