@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Learning D3-Practice</title>
+	<link rel="stylesheet" href="main.css">
+	<script type="text/javascript" src="d3.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+	var w = 800;
+	var h = 450;
+
+	var dataset = [132, 71, 337, 93, 78, 43, 20, 16, 30, 8,  17, 21];
+
+		var svg = d3.select("body")
+					.append("svg")
+					.attr("id", "chart")
+					.attr("height", h)
+					.attr("width", w);
+
+		svg.selectAll(".bar")
+		   .data(dataset)
+		   .enter()
+		   .append("rect")
+		   .attr("x", 0)
+		   .attr("y", function(d, i){ return i * 20;})
+		   .attr("width", function(d){ return d;})
+		   .attr("height", 19)
+		   .attr("fill", "teal");
+
+
+</script>
+
+</body>
+</html>
